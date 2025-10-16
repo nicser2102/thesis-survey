@@ -119,7 +119,7 @@
                 </p>
             </div>
             
-            <div class="mt-8">
+            <div class="mt-8 hidden">
                 <label for="full-name" class="block text-lg font-medium text-gray-700">Please enter your full name:</label>
                 <input type="text" id="full-name" placeholder="Name and Surname" class="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
             </div>
@@ -127,7 +127,7 @@
             <h2 class="text-2xl font-semibold mt-6 mb-2">Data Use and Privacy</h2>
             <div class="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                    By participating, you agree that the data you provide may be analyzed and used for academic research purposes. Your name and surname will not be included in the thesis or any publication. <br>
+                    By participating, you agree that the data you provide may be analyzed and used for academic research purposes. Your responses are collected anonymously and no personally identifiable information will be collected or stored. <br>
                     All data will be treated confidentially and used exclusively for the purposes of this research project.
                 </p>
             </div>
@@ -245,54 +245,17 @@
         <div id="screen-6" class="screen">
             <h1 class="text-3xl font-bold text-gray-800 mb-6">Feedback and Score Preview</h1>
             <p class="text-gray-700 mb-8 leading-relaxed">
-                In the next step, you will receive <span class="font-bold">personalized feedback</span> on your <span class="font-bold">performance</span> in the two business-case questions, along with a score from 1 to 10. Your responses will be evaluated by an <span class="font-bold">AI model</span> based on clear and objective criteria, including <span class="font-bold">completeness</span>, <span class="font-bold">correctness</span>, and <span class="font-bold">structure</span>. To encourage learning and comparison, your <span class="font-bold">results</span> will be <span class="font-bold">grouped</span> with those of other participants and will be <span class="font-bold">shared</span> and <span class="font-bold">made visible</span> at the end of the survey. Below, you can already see feedback and scores from two previous participants:
+                In the next step, you will receive <span class="font-bold">personalized feedback</span> on your <span class="font-bold">performance</span> in the two business-case questions, along with a score from 1 to 10. Your responses will be evaluated by an <span class="font-bold">AI model</span> based on clear and objective criteria, including <span class="font-bold">completeness</span>, <span class="font-bold">correctness</span>, and <span class="font-bold">structure</span>. Your <span class="font-bold">results are private</span>: they will be shown only to you, will not be visible to other participants, and the research team will access only anonymized data for analysis.
             </p>
             
-            <div class="feedback-box-container text-white">
-                <div class="text-center font-semibold mb-4">Feedbacks are constantly updating...</div>
-                <div class="space-y-6">
-                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
-                        <div class="flex justify-between items-center mb-4 text-sm text-gray-400">
-                            <div><div class="text-gray-100 font-semibold">Alessio Romano</div><span class="feedback-time-1"></span></div><span class="font-semibold">Score: 8.5/10</span>
-                        </div>
-                        <p class="text-gray-200">Both of your responses were well-structured. You correctly identified most of the key drivers related to the market, company strategy, and financial aspects in the first question. In the second question, you identified the drivers related to costs, revenues, investments, and strategic value. However, in both questions, you missed the factors related to potential market entry risks (question 1) and operational and financial risks (question 2).</p>
-                    </div>
-                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
-                        <div class="flex justify-between items-center mb-4 text-sm text-gray-400">
-                            <div><div class="text-gray-100 font-semibold">Giulia Ferri</div><span class="feedback-time-2"></span></div><span class="font-semibold">Score: 5.5/10</span>
-                        </div>
-                        <p class="text-gray-200">Both of your responses were poorly structured. In the first question, you correctly identified most of the drivers related to the market and financial aspects. In the second question, you identified drivers related to costs, revenues, and investments. However, in both questions, you missed the factors related to potential market entry risks (question 1), operational and financial risks (question 2), commercial factors (question 1), and potential strategic factors (question 2).</p>
-                    </div>
-                </div>
-            </div>
-
             <button id="next-6" class="mt-10 w-full bg-blue-600 text-white font-semibold py-3 rounded-lg shadow-md hover:bg-blue-700 transition-colors">Next</button>
         </div>
         
         <script>
+            // La funzione updateFeedbackTimes non è più necessaria ma la lascio come stub se mai servisse
             function updateFeedbackTimes() {
-                const now = new Date();
-                const currentHour = now.getHours();
-
-                let time1, time2;
-
-                if (currentHour >= 0 && currentHour < 10) { // Morning (before 10:00 AM)
-                    time1 = '15 minutes ago';
-                    time2 = '10 hours ago';
-                } else { // Standard time
-                    time1 = '20 minutes ago';
-                    time2 = '2 hours and 13 minutes ago';
-                }
-
-                document.querySelector('.feedback-time-1').textContent = `Last updated: ${time1}`;
-                document.querySelector('.feedback-time-2').textContent = `Last updated: ${time2}`;
+                // Stubo per compatibilità, non fa nulla di visibile
             }
-
-            // Call on load and on screen 6 display
-            updateFeedbackTimes();
-            
-            // Re-run the time update when screen 6 is shown (simplified to just re-run periodically if needed)
-            // Note: In a real app, this would be triggered by the navigation logic
         </script>
 
         <div id="screen-7" class="screen">
@@ -519,15 +482,15 @@
     </div>
 
             <h1 class="text-3xl font-bold text-gray-800 mb-6">Final questions (unrelated to the case)</h1>
-            <p class="text-gray-700 mb-8 leading-relaxed">The following questions are <span class="font-bold">not related</span> to the business case. Please answer them based on your <span class="font-bold">general thoughts</span> and <span class="font-bold">feelings</span> in everyday or professional situations. Use the slider to indicate how much each statement describes you, where: <strong>0 = Not at all</strong> | <strong>7 = Completely</strong></p>
+            <p class="text-gray-700 mb-8 leading-relaxed">The following questions are <span class="font-bold">not related</span> to the business case. Please answer them based on your <span class="font-bold">general thoughts</span> and <span class="font-bold">feelings</span> in everyday or professional situations. Use the slider to indicate how much each statement describes you, where: <strong>1 = Not at all</strong> | <strong>7 = Completely</strong></p>
             
             <div class="space-y-8">
                 <div>
                     <p class="text-lg font-medium text-gray-800 mb-4">Q18. I avoid situations where others might evaluate me</p>
                     <div class="slider-container relative">
-                        <input type="range" min="0" max="7" value="4" class="w-full" id="q18-slider">
+                        <input type="range" min="1" max="7" value="4" class="w-full" id="q18-slider">
                         <div class="flex justify-between mt-2 text-sm text-gray-600">
-                            <span>0</span>
+                            <span>1</span>
                             <span>7</span>
                         </div>
                         <p id="q18-value" class="text-center mt-2 text-lg font-semibold text-blue-600">4</p>
@@ -537,9 +500,9 @@
                 <div>
                     <p class="text-lg font-medium text-gray-800 mb-4">Q19. I feel nervous when I have to speak or perform in front of other people</p>
                     <div class="slider-container relative">
-                        <input type="range" min="0" max="7" value="4" class="w-full" id="q19-slider">
+                        <input type="range" min="1" max="7" value="4" class="w-full" id="q19-slider">
                         <div class="flex justify-between mt-2 text-sm text-gray-600">
-                            <span>0</span>
+                            <span>1</span>
                             <span>7</span>
                         </div>
                         <p id="q19-value" class="text-center mt-2 text-lg font-semibold text-blue-600">4</p>
@@ -549,9 +512,9 @@
                 <div>
                     <p class="text-lg font-medium text-gray-800 mb-4">Q20. I feel anxious before sharing my opinions in meetings</p>
                     <div class="slider-container relative">
-                        <input type="range" min="0" max="7" value="4" class="w-full" id="q20-slider">
+                        <input type="range" min="1" max="7" value="4" class="w-full" id="q20-slider">
                         <div class="flex justify-between mt-2 text-sm text-gray-600">
-                            <span>0</span>
+                            <span>1</span>
                             <span>7</span>
                         </div>
                         <p id="q20-value" class="text-center mt-2 text-lg font-semibold text-blue-600">4</p>
@@ -569,10 +532,9 @@
             <div id="submission-success" class="hidden">
                 <h1 class="text-4xl font-bold text-gray-800 mb-6 leading-tight"><span class="font-bold">Thank you for your time and effort.</span></h1>
                 <div class="space-y-4 text-gray-700 leading-relaxed">
-                    <p>Before concluding, we'd like clarify how your <span class="font-bold">data</span> will be <span class="font-bold">used</span> and the <span class="font-bold">purpose of this study</span>.</p>
-                    <p>The <span class="font-bold">business case</span> you were asked to complete was <span class="font-bold">used</span> as the <span class="font-bold">source data</span> for the <span class="font-bold">feedback you received</span>. The <span class="font-bold">primary goal</span> of this <span class="font-bold">study</span> is to understand <span class="font-bold">how people react</span> to <span class="font-bold">receiving such feedback</span>, and how this <span class="font-bold">differs</span> when <span class="font-bold">people feel</span> the <span class="font-bold">feedback</span> is <span class="font-bold">shared versus anonymous</span>.</p>
-                    <p>At the beginning of the questionnaire, we asked you to <span class="font-bold">enter your name and surname</span>. Later on, you were shown scenarios in which feedback and performance scores <span class="font-bold">appeared</span> to be <span class="font-bold">visible</span> to other participants and <span class="font-bold">compared publicly</span>. These were <span class="font-bold">fictional participants</span>.</p>
-                    <p><span class="font-bold">Your name</span> and <span class="font-bold">business case</span> answers are <span class="font-bold">not being shared nor stored</span>, and are <span class="font-bold">not accessible</span> to the <span class="font-bold">researcher</span>. <br>
+                    <p>The <span class="font-bold">business case</span> you were asked to complete was <span class="font-bold">used</span> as the <span class="font-bold">source data</span> for the <span class="font-bold">feedback you received</span>.</p>
+                    <p>The <span class="font-bold">primary goal</span> of this <span class="font-bold">study</span> is to understand <span class="font-bold">how people react</span> to <span class="font-bold">receiving such feedback</span>, and how this <span class="font-bold">differs</span> depending on the <span class="font-bold">way the feedback is presented</span>.</p>
+                    <p>Your <span class="font-bold">business case</span> answers are <span class="font-bold">not being shared nor stored</span>. <br>
                     <span class="font-bold">Only your answers</span> to the other <span class="font-bold">questions</span> will be <span class="font-bold">used in the study</span> so all <span class="font-bold">data</span> is <span class="font-bold">completely anonymous</span> and your <span class="font-bold">privacy is fully protected</span>.</p>
                     <p><span class="font-bold">Thank you again for your participation.</span></p>
                 </div>
@@ -592,13 +554,13 @@
 
         // Firebase Configuration
         const firebaseConfig = {
-            apiKey: "AIzaSyAGQ6MY4e90TIAfS2Qccal6yQZiVps0pvA",
-            authDomain: "tesi-feedback-pubblico.firebaseapp.com",
-            projectId: "tesi-feedback-pubblico",
-            storageBucket: "tesi-feedback-pubblico.firebasestorage.app",
-            messagingSenderId: "415179890467",
-            appId: "1:415179890467:web:c56a8bf7e2ed63c0533696",
-            measurementId: "G-12KVD24LET"
+            apiKey: "AIzaSyBzxUiz_YU4-5jbSLHYDU7DHSctV90JTd4",
+            authDomain: "tesi-feedback-privato.firebaseapp.com",
+            projectId: "tesi-feedback-privato",
+            storageBucket: "tesi-feedback-privato.firebasestorage.app",
+            messagingSenderId: "697795072673",
+            appId: "1:697795072673:web:8778345141c6bb4cbd96e0",
+            measurementId: "G-WTY2BMKB7B"
         };
 
         // This appId is used for the Firestore collection path
@@ -607,7 +569,7 @@
         // Global state to store user's answers and progress
         const state = {
             currentScreen: 1,
-            name: '',
+            // RIMOSSO: name: '',
             consent: false,
             q1: 4, q2: 4, q3: 4, q4: 4,
             q_case_1: '',
@@ -615,7 +577,9 @@
             q5: 4, q6: 4, q7: 4, q8: 4,
             q9: 4, q10: 4, q11: 4, q12: 4, q13: 4,
             q14: 4, q15: 4, q16: 4, q17: 4,
-            q18: 4, q19: 4, q20: 4,
+            q18: 4, // Inizializzato a 4, il default centrale (tra 1 e 7)
+            q19: 4, // Inizializzato a 4
+            q20: 4, // Inizializzato a 4
             aiScore: 0,
             aiFeedback: ''
         };
@@ -952,7 +916,7 @@ if (!scoreAvgMatch && scoreQ1Match && scoreQ2Match) {
             // Data object to be saved
             const data = {
                 timestamp: new Date().toISOString(),
-                name: state.name,
+                // RIMOSSO: name: state.name,
                 q1: state.q1, q2: state.q2, q3: state.q3, q4: state.q4,
                 q_case_1: state.q_case_1,
                 q_case_2: state.q_case_2,
@@ -961,7 +925,7 @@ if (!scoreAvgMatch && scoreQ1Match && scoreQ2Match) {
                 q14: state.q14, q15: state.q15, q16: state.q16, q17: state.q17,
                 q18: state.q18, q19: state.q19, q20: state.q20,
                 aiScore: state.aiScore,
-                aiFeedback: state.aiFeedback
+                aiFeedback: state.aiFeedback // Il feedback dell'AI viene salvato come contesto
             };
             
             try {
@@ -987,13 +951,13 @@ if (!scoreAvgMatch && scoreQ1Match && scoreQ2Match) {
                 const buttonId = button.id;
                 switch (buttonId) {
                     case 'next-1':
-                        const fullName = document.getElementById('full-name').value.trim();
+                        // RIMOSSO: const fullName = document.getElementById('full-name').value.trim();
                         const consent = document.getElementById('consent-checkbox').checked;
-                        if (fullName && consent) {
-                            state.name = fullName;
+                        if (consent) {
+                            // RIMOSSO: state.name = fullName;
                             showScreen(2);
                         } else {
-                            showMessage("Please enter your full name and agree to participate.");
+                            showMessage("Please agree to participate.");
                         }
                         break;
                     case 'next-2':
